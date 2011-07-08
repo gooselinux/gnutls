@@ -1,0 +1,112 @@
+diff -up gnutls-2.8.5/build-aux/config.rpath gnutls-2.8.5/build-aux/config
+diff -up gnutls-2.8.5/configure.rpath gnutls-2.8.5/configure
+--- gnutls-2.8.5/configure.rpath	2009-11-02 11:35:57.000000000 +0100
++++ gnutls-2.8.5/configure	2010-01-28 22:12:20.000000000 +0100
+@@ -15141,7 +15141,7 @@ shlibpath_var=
+ shlibpath_overrides_runpath=unknown
+ version_type=none
+ dynamic_linker="$host_os ld.so"
+-sys_lib_dlsearch_path_spec="/lib /usr/lib"
++sys_lib_dlsearch_path_spec="/lib /usr/lib /lib64 /usr/lib64"
+ need_lib_prefix=unknown
+ hardcode_into_libs=no
+ 
+@@ -15526,7 +15526,7 @@ rm -f core conftest.err conftest.$ac_obj
+   # Append ld.so.conf contents to the search path
+   if test -f /etc/ld.so.conf; then
+     lt_ld_extra=`awk '/^include / { system(sprintf("cd /etc; cat %s 2>/dev/null", \$2)); skip = 1; } { if (!skip) print \$0; skip = 0; }' < /etc/ld.so.conf | $SED -e 's/#.*//;/^[	 ]*hwcap[	 ]/d;s/[:,	]/ /g;s/=[^=]*$//;s/=[^= ]* / /g;/^$/d' | tr '\n' ' '`
+-    sys_lib_dlsearch_path_spec="/lib /usr/lib $lt_ld_extra"
++    sys_lib_dlsearch_path_spec="/lib /usr/lib /lib64 /usr/lib64 $lt_ld_extra"
+   fi
+ 
+   # We used to test for /lib/ld.so.1 and disable shared libraries on
+@@ -18610,7 +18610,7 @@ shlibpath_var=
+ shlibpath_overrides_runpath=unknown
+ version_type=none
+ dynamic_linker="$host_os ld.so"
+-sys_lib_dlsearch_path_spec="/lib /usr/lib"
++sys_lib_dlsearch_path_spec="/lib /usr/lib /lib64 /usr/lib64"
+ need_lib_prefix=unknown
+ hardcode_into_libs=no
+ 
+@@ -18994,7 +18994,7 @@ rm -f core conftest.err conftest.$ac_obj
+   # Append ld.so.conf contents to the search path
+   if test -f /etc/ld.so.conf; then
+     lt_ld_extra=`awk '/^include / { system(sprintf("cd /etc; cat %s 2>/dev/null", \$2)); skip = 1; } { if (!skip) print \$0; skip = 0; }' < /etc/ld.so.conf | $SED -e 's/#.*//;/^[	 ]*hwcap[	 ]/d;s/[:,	]/ /g;s/=[^=]*$//;s/=[^= ]* / /g;/^$/d' | tr '\n' ' '`
+-    sys_lib_dlsearch_path_spec="/lib /usr/lib $lt_ld_extra"
++    sys_lib_dlsearch_path_spec="/lib /usr/lib /lib64 /usr/lib64 $lt_ld_extra"
+   fi
+ 
+   # We used to test for /lib/ld.so.1 and disable shared libraries on
+@@ -29278,6 +29278,7 @@ finish_cmds='`$ECHO "X$finish_cmds" | $X
+ finish_eval='`$ECHO "X$finish_eval" | $Xsed -e "$delay_single_quote_subst"`'
+ hardcode_into_libs='`$ECHO "X$hardcode_into_libs" | $Xsed -e "$delay_single_quote_subst"`'
+ sys_lib_search_path_spec='`$ECHO "X$sys_lib_search_path_spec" | $Xsed -e "$delay_single_quote_subst"`'
++
+ sys_lib_dlsearch_path_spec='`$ECHO "X$sys_lib_dlsearch_path_spec" | $Xsed -e "$delay_single_quote_subst"`'
+ hardcode_action='`$ECHO "X$hardcode_action" | $Xsed -e "$delay_single_quote_subst"`'
+ enable_dlopen='`$ECHO "X$enable_dlopen" | $Xsed -e "$delay_single_quote_subst"`'
+diff -up gnutls-2.8.5/lib/build-aux/config.rpath gnutls-2.8.5/lib/build-aux/config
+diff -up gnutls-2.8.5/lib/configure.rpath gnutls-2.8.5/lib/configure
+--- gnutls-2.8.5/lib/configure.rpath	2009-11-02 11:35:18.000000000 +0100
++++ gnutls-2.8.5/lib/configure	2010-01-28 22:14:03.000000000 +0100
+@@ -10465,7 +10465,8 @@ shlibpath_var=
+ shlibpath_overrides_runpath=unknown
+ version_type=none
+ dynamic_linker="$host_os ld.so"
+-sys_lib_dlsearch_path_spec="/lib /usr/lib"
++
++sys_lib_dlsearch_path_spec="/lib /usr/lib /lib64 /usr/lib64"
+ need_lib_prefix=unknown
+ hardcode_into_libs=no
+ 
+@@ -10850,7 +10851,7 @@ rm -f core conftest.err conftest.$ac_obj
+   # Append ld.so.conf contents to the search path
+   if test -f /etc/ld.so.conf; then
+     lt_ld_extra=`awk '/^include / { system(sprintf("cd /etc; cat %s 2>/dev/null", \$2)); skip = 1; } { if (!skip) print \$0; skip = 0; }' < /etc/ld.so.conf | $SED -e 's/#.*//;/^[	 ]*hwcap[	 ]/d;s/[:,	]/ /g;s/=[^=]*$//;s/=[^= ]* / /g;/^$/d' | tr '\n' ' '`
+-    sys_lib_dlsearch_path_spec="/lib /usr/lib $lt_ld_extra"
++    sys_lib_dlsearch_path_spec="/lib /usr/lib /lib64 /usr/lib64 $lt_ld_extra"
+   fi
+ 
+   # We used to test for /lib/ld.so.1 and disable shared libraries on
+@@ -24444,7 +24445,8 @@ shlibpath_var=
+ shlibpath_overrides_runpath=unknown
+ version_type=none
+ dynamic_linker="$host_os ld.so"
+-sys_lib_dlsearch_path_spec="/lib /usr/lib"
++
++sys_lib_dlsearch_path_spec="/lib /usr/lib /lib64 /usr/lib64"
+ need_lib_prefix=unknown
+ hardcode_into_libs=no
+ 
+@@ -24828,7 +24830,7 @@ rm -f core conftest.err conftest.$ac_obj
+   # Append ld.so.conf contents to the search path
+   if test -f /etc/ld.so.conf; then
+     lt_ld_extra=`awk '/^include / { system(sprintf("cd /etc; cat %s 2>/dev/null", \$2)); skip = 1; } { if (!skip) print \$0; skip = 0; }' < /etc/ld.so.conf | $SED -e 's/#.*//;/^[	 ]*hwcap[	 ]/d;s/[:,	]/ /g;s/=[^=]*$//;s/=[^= ]* / /g;/^$/d' | tr '\n' ' '`
+-    sys_lib_dlsearch_path_spec="/lib /usr/lib $lt_ld_extra"
++    sys_lib_dlsearch_path_spec="/lib /usr/lib /lib64 /usr/lib64 $lt_ld_extra"
+   fi
+ 
+   # We used to test for /lib/ld.so.1 and disable shared libraries on
+diff -up gnutls-2.8.5/libextra/build-aux/config.rpath gnutls-2.8.5/libextra/build-aux/config
+diff -up gnutls-2.8.5/libextra/configure.rpath gnutls-2.8.5/libextra/configure
+--- gnutls-2.8.5/libextra/configure.rpath	2009-11-02 11:35:38.000000000 +0100
++++ gnutls-2.8.5/libextra/configure	2010-01-28 21:45:25.000000000 +0100
+@@ -9821,7 +9821,7 @@ shlibpath_var=
+ shlibpath_overrides_runpath=unknown
+ version_type=none
+ dynamic_linker="$host_os ld.so"
+-sys_lib_dlsearch_path_spec="/lib /usr/lib"
++sys_lib_dlsearch_path_spec="/lib /usr/lib /lib64 /usr/lib64"
+ need_lib_prefix=unknown
+ hardcode_into_libs=no
+ 
+@@ -10206,7 +10206,7 @@ rm -f core conftest.err conftest.$ac_obj
+   # Append ld.so.conf contents to the search path
+   if test -f /etc/ld.so.conf; then
+     lt_ld_extra=`awk '/^include / { system(sprintf("cd /etc; cat %s 2>/dev/null", \$2)); skip = 1; } { if (!skip) print \$0; skip = 0; }' < /etc/ld.so.conf | $SED -e 's/#.*//;/^[	 ]*hwcap[	 ]/d;s/[:,	]/ /g;s/=[^=]*$//;s/=[^= ]* / /g;/^$/d' | tr '\n' ' '`
+-    sys_lib_dlsearch_path_spec="/lib /usr/lib $lt_ld_extra"
++    sys_lib_dlsearch_path_spec="/lib /usr/lib /lib64 /usr/lib64 $lt_ld_extra"
+   fi
+ 
+   # We used to test for /lib/ld.so.1 and disable shared libraries on
